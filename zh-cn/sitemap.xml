@@ -15,10 +15,42 @@
                 href="https://gswhy.github.io/"
                 />
   </url><url>
+    <loc>https://gswhy.github.io/categories/</loc>
+    <lastmod>2026-03-12T09:45:31+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gswhy.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://gswhy.github.io/categories/"
+                />
+  </url><url>
     <loc>https://gswhy.github.io/post/</loc>
     <lastmod>2026-03-12T09:45:31+08:00</lastmod>
   </url><url>
-    <loc>https://gswhy.github.io/p/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</loc>
+    <loc>https://gswhy.github.io/tags/</loc>
+    <lastmod>2026-03-12T09:45:31+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gswhy.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://gswhy.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://gswhy.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/</loc>
+    <lastmod>2026-03-12T09:45:31+08:00</lastmod>
+  </url><url>
+    <loc>https://gswhy.github.io/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/</loc>
+    <lastmod>2026-03-12T09:45:31+08:00</lastmod>
+  </url><url>
+    <loc>https://gswhy.github.io/p/%E4%B8%BB%E6%A0%87%E9%A2%98/</loc>
     <lastmod>2026-03-12T09:45:31+08:00</lastmod>
   </url><url>
     <loc>https://gswhy.github.io/page/</loc>
@@ -58,30 +90,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://gswhy.github.io/archives/"
-                />
-  </url><url>
-    <loc>https://gswhy.github.io/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gswhy.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://gswhy.github.io/categories/"
-                />
-  </url><url>
-    <loc>https://gswhy.github.io/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gswhy.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://gswhy.github.io/tags/"
                 />
   </url><url>
     <loc>https://gswhy.github.io/%E9%93%BE%E6%8E%A5/</loc>
