@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://gswhy.github.io/en/404.html'>
 
-<link rel="stylesheet" href="/scss/style.min.86591c898bd806857815fbb8c47e8d3fed97c133b78e83d9bfc27b164dd0aa2b.css"><meta property='og:title' content="404 Page not found">
+<link rel="stylesheet" href="/scss/style.min.a5e97107ae01b456783fc0a8ef1ea2c50a6369fe4248d950110a83de917a1739.css"><meta property='og:title' content="404 Page not found">
 <meta property='og:description' content="">
 <meta property='og:url' content='https://gswhy.github.io/en/404.html'>
 <meta property='og:site_name' content='GSWHY'>
@@ -304,6 +304,53 @@
         
         2026 GSWHY
     </section>
+
+    
+    <section class="count_info">
+        <div>
+            This blog has been running stably for
+            <span id="ds" class="running-days"></span>
+            day,
+            <span id="hs" class="running-days"></span>
+            hours and
+            <span id="ms" class="running-days"></span>
+            minutes
+        </div>
+        <div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            Published 0 articles in total · totaling 0.00 k words
+        </div>
+        <div>
+            The total number of visits is
+            <span id="vercount_value_site_uv">Loading</span>
+            times
+        </div>
+    </section>
+
+    
+    <script>
+        let s1 = '2026-3-11'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        let s2 = new Date();
+        let timeDifference = s2.getTime() - s1.getTime();
+
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('ds').innerHTML = days;
+        document.getElementById('hs').innerHTML = hours;
+        document.getElementById('ms').innerHTML = minutes;
+    </script>
+
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
@@ -330,6 +377,6 @@
         document.head.appendChild(customFont);
     }());
 </script>
-
+<script defer src="https://cn.vercount.one/js"></script>
     </body>
 </html>
