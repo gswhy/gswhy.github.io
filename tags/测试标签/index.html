@@ -10,7 +10,7 @@
 <meta property='og:description' content="">
 <meta property='og:url' content='https://gswhy.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/'>
 <meta property='og:site_name' content='GSWHY'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-03-15T21:30:09&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-03-15T21:34:09&#43;08:00 '/>
 <meta name="twitter:title" content="测试标签">
 <meta name="twitter:description" content=""><link rel="alternate" type="application/rss&#43;xml" href="https://gswhy.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -476,5 +476,53 @@
     }());
 </script>
 <script defer src="https://cn.vercount.one/js"></script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://gswhy.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script>
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
     </body>
 </html>
