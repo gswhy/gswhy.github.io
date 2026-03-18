@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gswhy.github.io/p/post/ddd/</loc>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
+  </url><url>
+    <loc>https://gswhy.github.io/post/</loc>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
+  </url><url>
+    <loc>https://gswhy.github.io/p/post/arti111/</loc>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
+  </url><url>
+    <loc>https://gswhy.github.io/p/post/ai/</loc>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
+  </url><url>
     <loc>https://gswhy.github.io/categories/</loc>
     <lastmod>2026-03-18T10:20:05+08:00</lastmod>
     <xhtml:link
@@ -23,9 +35,6 @@
   </url><url>
     <loc>https://gswhy.github.io/tags/markdown/</loc>
     <lastmod>2026-03-15T21:52:01+08:00</lastmod>
-  </url><url>
-    <loc>https://gswhy.github.io/post/</loc>
-    <lastmod>2026-03-18T10:20:05+08:00</lastmod>
   </url><url>
     <loc>https://gswhy.github.io/categories/syntax/</loc>
     <lastmod>2026-03-15T21:52:01+08:00</lastmod>
@@ -49,13 +58,13 @@
     <loc>https://gswhy.github.io/tags/themes/</loc>
     <lastmod>2026-03-15T21:52:01+08:00</lastmod>
   </url><url>
-    <loc>https://gswhy.github.io/p/test3/</loc>
+    <loc>https://gswhy.github.io/p/post/test3/</loc>
     <lastmod>2026-03-15T21:52:01+08:00</lastmod>
   </url><url>
-    <loc>https://gswhy.github.io/p/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%9533333333333/</loc>
+    <loc>https://gswhy.github.io/p/post/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%9532/</loc>
     <lastmod>2026-03-15T21:52:01+08:00</lastmod>
   </url><url>
-    <loc>https://gswhy.github.io/p/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%952/</loc>
+    <loc>https://gswhy.github.io/p/post/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%952/</loc>
     <lastmod>2026-03-15T21:34:09+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -65,7 +74,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://gswhy.github.io/p/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%952/"
+                href="https://gswhy.github.io/p/post/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%952/"
                 />
   </url><url>
     <loc>https://gswhy.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/</loc>
@@ -74,11 +83,11 @@
     <loc>https://gswhy.github.io/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/</loc>
     <lastmod>2026-03-18T10:20:05+08:00</lastmod>
   </url><url>
-    <loc>https://gswhy.github.io/p/%E4%B8%BB%E6%A0%87%E9%A2%98/</loc>
+    <loc>https://gswhy.github.io/p/post/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</loc>
     <lastmod>2026-03-18T10:20:05+08:00</lastmod>
   </url><url>
     <loc>https://gswhy.github.io/page/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -90,21 +99,8 @@
                 href="https://gswhy.github.io/page/"
                 />
   </url><url>
-    <loc>https://gswhy.github.io/%E5%85%B3%E4%BA%8E/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gswhy.github.io/en/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://gswhy.github.io/%E5%85%B3%E4%BA%8E/"
-                />
-  </url><url>
     <loc>https://gswhy.github.io/archives/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -129,8 +125,8 @@
                 href="https://gswhy.github.io/"
                 />
   </url><url>
-    <loc>https://gswhy.github.io/%E9%93%BE%E6%8E%A5/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
+    <loc>https://gswhy.github.io/links/</loc>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -139,11 +135,11 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://gswhy.github.io/%E9%93%BE%E6%8E%A5/"
+                href="https://gswhy.github.io/links/"
                 />
   </url><url>
     <loc>https://gswhy.github.io/search/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

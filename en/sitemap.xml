@@ -7,7 +7,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://gswhy.github.io/p/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%952/"
+                href="https://gswhy.github.io/p/post/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%952/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -15,21 +15,8 @@
                 href="https://gswhy.github.io/en/p/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%952/"
                 />
   </url><url>
-    <loc>https://gswhy.github.io/en/about/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://gswhy.github.io/%E5%85%B3%E4%BA%8E/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gswhy.github.io/en/about/"
-                />
-  </url><url>
     <loc>https://gswhy.github.io/en/archives/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -42,7 +29,7 @@
                 />
   </url><url>
     <loc>https://gswhy.github.io/en/page/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -80,11 +67,11 @@
                 />
   </url><url>
     <loc>https://gswhy.github.io/en/links/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://gswhy.github.io/%E9%93%BE%E6%8E%A5/"
+                href="https://gswhy.github.io/links/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -93,7 +80,7 @@
                 />
   </url><url>
     <loc>https://gswhy.github.io/en/search/</loc>
-    <lastmod>2026-03-11T21:18:16+08:00</lastmod>
+    <lastmod>2026-03-18T13:21:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
