@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>GSWHY</title>
-        <link>https://gswhy.github.io/</link>
-        <description>Recent content on GSWHY</description>
+        <title>Posts on GSWHY</title>
+        <link>https://gswhy.github.io/post/</link>
+        <description>Recent content in Posts on GSWHY</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <copyright>GSWHY</copyright><atom:link href="https://gswhy.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>GSWHY</copyright>
+        <lastBuildDate>Fri, 20 Mar 2026 13:39:41 +0800</lastBuildDate><atom:link href="https://gswhy.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Test6</title>
         <link>https://gswhy.github.io/p/test6/</link>
         <pubDate>Thu, 19 Mar 2026 16:27:43 +0800</pubDate>
@@ -55,30 +56,6 @@
         <pubDate>Thu, 19 Mar 2026 16:27:02 +0800</pubDate>
         
         <guid>https://gswhy.github.io/p/test1/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>归档</title>
-        <link>https://gswhy.github.io/archives/</link>
-        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://gswhy.github.io/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>链接</title>
-        <link>https://gswhy.github.io/links/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://gswhy.github.io/links/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>搜索</title>
-        <link>https://gswhy.github.io/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://gswhy.github.io/search/</guid>
         <description></description>
         </item>
         
