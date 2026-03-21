@@ -12,7 +12,15 @@
         <pubDate>Sat, 21 Mar 2026 00:08:24 +0800</pubDate>
         
         <guid>https://gswhy.github.io/p/first-post/</guid>
-        <description></description>
+        <description>&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-tip&#34;&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-warn&#34;&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-error&#34;&gt;
+    &lt;/blockquote&gt;
+</description>
         </item>
         <item>
         <title>归档</title>
