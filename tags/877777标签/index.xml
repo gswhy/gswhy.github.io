@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>877777标签 on GSWHY</title>
+        <link>https://gswhy.github.io/tags/877777%E6%A0%87%E7%AD%BE/</link>
+        <description>Recent content in 877777标签 on GSWHY</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>GSWHY</copyright>
+        <lastBuildDate>Mon, 23 Mar 2026 15:55:21 +0800</lastBuildDate><atom:link href="https://gswhy.github.io/tags/877777%E6%A0%87%E7%AD%BE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>简单记录下1</title>
+        <link>https://gswhy.github.io/p/first-post/</link>
+        <pubDate>Sat, 21 Mar 2026 00:08:24 +0800</pubDate>
+        
+        <guid>https://gswhy.github.io/p/first-post/</guid>
+        <description>&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-tip&#34;&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-warn&#34;&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-error&#34;&gt;
+    &lt;/blockquote&gt;
+&lt;h2 id=&#34;什么是脚注&#34;&gt;什么是脚注
+&lt;/h2&gt;&lt;p&gt;脚注&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;是文档中用于添加补充说明或引用来源的一种机制。&lt;/p&gt;
+&lt;h2 id=&#34;脚注的特点&#34;&gt;脚注的特点
+&lt;/h2&gt;&lt;p&gt;脚注具有以下特点&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自动编号&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;支持双向跳转&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;语法简单直观&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用场景&#34;&gt;使用场景
+&lt;/h2&gt;&lt;p&gt;脚注适用于以下场景&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;技术博客&lt;/li&gt;
+&lt;li&gt;学术笔记&lt;/li&gt;
+&lt;li&gt;参考文献管理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;脚注定义&#34;&gt;脚注定义
+&lt;/h2&gt;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;脚注是出现在页面底部的注释，用于对正文内容进行补充说明或标注引用来源。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;本示例来源于 Markdown 脚注功能测试文档。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;脚注的编号是自动生成的，无需手动维护序号。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;点击正文中的脚注标记可以跳转到对应的脚注内容，点击脚注后的返回箭头可以跳回原文位置。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;脚注语法仅需 &lt;code&gt;[^key]&lt;/code&gt; 和 &lt;code&gt;[^key]: 内容&lt;/code&gt; 两种格式。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;技术博客中常用脚注来标注参考文献或技术细节。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;学术笔记中脚注可以用来添加补充说明或引用来源。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
