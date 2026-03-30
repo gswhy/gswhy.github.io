@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on GSWHY</title>
+        <link>https://gswhy.github.io/tags/</link>
+        <description>Recent content in Tags on GSWHY</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>GSWHY</copyright>
+        <lastBuildDate>Wed, 25 Mar 2026 19:56:40 +0800</lastBuildDate><atom:link href="https://gswhy.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Code-Based Cryptography</title>
+        <link>https://gswhy.github.io/tags/code-based-cryptography/</link>
+        <pubDate>Mon, 23 Mar 2026 16:57:58 +0800</pubDate>
+        
+        <guid>https://gswhy.github.io/tags/code-based-cryptography/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>McEliece</title>
+        <link>https://gswhy.github.io/tags/mceliece/</link>
+        <pubDate>Mon, 23 Mar 2026 16:57:58 +0800</pubDate>
+        
+        <guid>https://gswhy.github.io/tags/mceliece/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

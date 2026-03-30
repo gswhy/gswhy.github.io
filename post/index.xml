@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on GSWHY</title>
+        <link>https://gswhy.github.io/post/</link>
+        <description>Recent content in Posts on GSWHY</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>GSWHY</copyright>
+        <lastBuildDate>Fri, 27 Mar 2026 01:21:34 +0800</lastBuildDate><atom:link href="https://gswhy.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Classic McEliece Specification</title>
+        <link>https://gswhy.github.io/p/mceliece-specification/</link>
+        <pubDate>Mon, 23 Mar 2026 16:57:58 +0800</pubDate>
+        
+        <guid>https://gswhy.github.io/p/mceliece-specification/</guid>
+        <description>&lt;h1 id=&#34;classic-mceliece&#34;&gt;Classic McEliece&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;
+&lt;/h1&gt;&lt;h2 id=&#34;安全稳定性&#34;&gt;安全稳定性
+&lt;/h2&gt;&lt;p&gt;当McEliece密码体制使用的码维数 $k$ 随着 $n \to \infty$,
+&lt;/p&gt;
+$$
+k = (0.8 + o(1))
+$$&lt;p&gt;
+时, 原始的Prange ISD (1962) 攻击的成本为
+&lt;/p&gt;
+$$
+(5+o(1))^t,
+$$&lt;p&gt;
+这里 $t=(0.2+o(1))n / \log_2 n$ 是密码体制中使用的错误个数, $o(1)$ 表示当 $n \to \infty$ 时收敛于 $0$. 经过&lt;a class=&#34;link&#34; href=&#34;https://classic.mceliece.org/papers.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;大量研究&lt;/a&gt;, 目前已知的最优非量子攻击的成本依然为 $(5+o(1))^t$.&lt;/p&gt;
+&lt;p&gt;攻击McEliece密码体制的瓶颈在于庞大的搜索过程, Grover算法可应用于此搜索, 所以量子攻击的成本为 $(5+o(1))^{t/2}$.&lt;/p&gt;
+&lt;p&gt;更一般地, 用 $R$ 替换 $0.8$, 等价于用 $1/(1-R)$ 替换 $5$. 对于任何给定的密钥长度, 当 $R$ 接近 $0.8$ 时安全性最高.&lt;/p&gt;
+&lt;h3 id=&#34;与格密码的安全性比较&#34;&gt;与格密码的安全性比较
+&lt;/h3&gt;&lt;p&gt;图1展示了针对&amp;quot;未破解&amp;quot;的基于格的密码系统 (红线) 的非量子攻击的渐近指数与 McEliece 密码体制 (蓝线) 相比的进展. 其中 $AttackCost_{Y}(K)$ 表示 $Y$ 年针对密钥长度为 $K$ 的最佳攻击的成本. 图1显示, 2010年基于格的密码的渐近安全级别比 2024 年的渐近安全级别高 $45$%. 2000年, 基于格的密码的渐近安全级别比2024年的渐近安全级别高出超指数级 (superexponentially).
+因此, 针对 McEliece 的攻击改进幅度不大, 但针对格的攻击改进幅度则大得多.&lt;/p&gt;
+&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;https://gswhy.github.io/p/mceliece-specification/img/asymptotics2024.svg&#34;
+    alt=&#34;McEliece密码体制与格密码的安全性比较&#34; width=&#34;860&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;图1. McEliece密码体制与格密码的安全性比较&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;实现&#34;&gt;实现
+&lt;/h2&gt;&lt;h3 id=&#34;密钥尺寸&#34;&gt;密钥尺寸
+&lt;/h3&gt;&lt;p&gt;Classic McEliece算法的公钥很长, 但密文很短. 公钥可以重复用于多个密文, 因此Classic McEliece 算法的总成本可以低于其他后量子加密系统. 对于&amp;quot;静态密钥&amp;quot; (例如身份密钥), Classic McEliece 算法通常是成本最低的选择; 对于&amp;quot;临时密钥&amp;quot;, 其他算法通常成本更低. Classic McEliece 密钥密文尺寸的实例如表1所示.&lt;/p&gt;
+&lt;div class=&#34;table-wrapper&#34;&gt;
+  
+  
+    
+    &lt;p class=&#34;table-caption&#34; style=&#34;text-align: center;&#34;&gt;
+      表2. Classic McEliece 密钥密文尺寸
+    &lt;/p&gt;
+  
+  &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;public key&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;private key&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;ciphertext&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;session key&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;261120&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;6492&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;96&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;32&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;mceliece348864&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;524160&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;13608&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;156&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;32&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;mceliece460896&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1044992&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;13932&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;208&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;32&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;mceliece6688128&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1047319&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;13948&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;194&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;32&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;mceliece6960119&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1357824&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;14120&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;208&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;32&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;mceliece8192128&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+&lt;h3 id=&#34;时序攻击&#34;&gt;时序攻击
+&lt;/h3&gt;&lt;p&gt;为了抵御时序攻击 (Timing Attacks), Classic McEliece的官方实现从一开始就被设计成以恒定时间运行, 采用了 &amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;https://tungchou.github.io/papers/mcbits.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;McBits&lt;/a&gt;&amp;rdquo; 和 &amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;https://tungchou.github.io/papers/mcbits_revisited.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;McBits Revisited&lt;/a&gt;&amp;rdquo; 论文中介绍的技术.&lt;/p&gt;
+&lt;h2 id=&#34;cryptosystem-specification&#34;&gt;Cryptosystem specification
+&lt;/h2&gt;&lt;h3 id=&#34;简化行阶梯形式&#34;&gt;简化行阶梯形式
+&lt;/h3&gt;&lt;h3 id=&#34;系统形&#34;&gt;系统形
+&lt;/h3&gt;&lt;h3 id=&#34;semi-systematic-form&#34;&gt;Semi-systematic form
+&lt;/h3&gt;&lt;p&gt;参数 $\mu$, $\nu$ 满足 $\nu \ge \mu \ge 0$.&lt;br&gt;
+定义: 一个秩为 $r$ 的矩阵 $R$ 在 $(\mu, \nu)$-semi-systematic form 中, 如果:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$R$ 有 $r$ 行 (没有零行);&lt;/li&gt;
+&lt;li&gt;对 $0 \le i &amp;lt; r - \mu$, 有 $c_i = i$;&lt;/li&gt;
+&lt;li&gt;对 $0 \le i &amp;lt; r$, 有 $c_i \le i-\mu+\nu$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+        &lt;div class=&#34;alert-header&#34;&gt;
+            &lt;span class=&#34;alert-icon&#34;&gt;📝&lt;/span&gt;
+            &lt;span class=&#34;alert-title&#34;&gt;备注&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;alert-body&#34;&gt;
+            &lt;ul&gt;
+&lt;li&gt;前 $r - \mu$ 个前导 $1$ (pivot) 必须在列 $0,1,2,\ldots, r-\mu-1$ 上;&lt;/li&gt;
+&lt;li&gt;所有 pivot 列索引 $c_i$ 不能太大, 具体受 $\mu$, $\nu$ 限制.&lt;/li&gt;
+&lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+        &lt;div class=&#34;alert-header&#34;&gt;
+            &lt;span class=&#34;alert-icon&#34;&gt;📝&lt;/span&gt;
+            &lt;span class=&#34;alert-title&#34;&gt;特殊情况&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;alert-body&#34;&gt;
+            &lt;ul&gt;
+&lt;li&gt;如果 $\mu = 0$, 条件 2 中 $c_i$ 对所有 $i$ 成立, 所以就是系统形.&lt;/li&gt;
+&lt;li&gt;如果 $\mu = r$, 条件 2 没有约束, 条件 3: $c_i \le i - r + \nu$. 由于 $i \le r - 1$, 最宽松的情况是 $c_i \le \nu - 1$, 因此所有 pivot 都在前 $\nu$ 列内.&lt;/li&gt;
+&lt;li&gt;一般情况下, 前 $r-\mu$ 个 pivot 严格对准列索引 $0,1,\ldots$, 剩下的 $\mu$ 个 pivot 可以向右偏移, 但总偏移量受 $\nu$ 控制.&lt;/li&gt;
+&lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/blockquote&gt;
+&lt;p&gt;举例: 设 $n=10$, $r=5$, 取 $\mu = 2$, $\nu=4$. 条件:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$r-\mu=3$, 所以前 $3$ 个 pivot 必须在列 $0,1,2$;&lt;/li&gt;
+&lt;li&gt;所有 pivot 列 $c_i$ 满足 $c_i \le i-2+4 = i+2$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;table-wrapper&#34;&gt;
+  
+  
+    
+    &lt;p class=&#34;table-caption&#34; style=&#34;text-align: center;&#34;&gt;
+      表3. Semi-Systematic Form 例子
+    &lt;/p&gt;
+  
+  &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;$i$&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;$i+2$&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;允许的最大 pivot 列&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$0$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$2$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$c_0 = 0$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$1$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$3$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$c_1 = 1$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$2$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$4$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$c_2 = 2$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$3$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$5$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$3 \le c_3 \le 5$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$4$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$6$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$4 \le c_4 \le 6$&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+&lt;p&gt;一个可能的矩阵
+&lt;/p&gt;
+$$
+R = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; * &amp; * &amp; * &amp; * &amp; * &amp; * &amp; * \\
+0 &amp; 1 &amp; 0 &amp; * &amp; * &amp; * &amp; * &amp; * &amp; * &amp; * \\
+0 &amp; 0 &amp; 1 &amp; * &amp; * &amp; * &amp; * &amp; * &amp; * &amp; * \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; * &amp; * &amp; * &amp; * &amp; * \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; * &amp; * &amp; * 
+\end{pmatrix}
+$$&lt;h2 id=&#34;设计原理&#34;&gt;设计原理
+&lt;/h2&gt;&lt;h2 id=&#34;参考文献&#34;&gt;参考文献
+&lt;/h2&gt;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Classic McEliece &lt;a class=&#34;link&#34; href=&#34;https://classic.mceliece.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://classic.mceliece.org/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>简单记录下</title>
+        <link>https://gswhy.github.io/p/first-post/</link>
+        <pubDate>Sat, 21 Mar 2026 00:08:24 +0800</pubDate>
+        
+        <guid>https://gswhy.github.io/p/first-post/</guid>
+        <description>&lt;h2 id=&#34;markdown-alert&#34;&gt;Markdown Alert
+&lt;/h2&gt;&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+        &lt;div class=&#34;alert-header&#34;&gt;
+            &lt;span class=&#34;alert-icon&#34;&gt;📝&lt;/span&gt;
+            &lt;span class=&#34;alert-title&#34;&gt;备注&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;alert-body&#34;&gt;
+            &lt;p&gt;突出显示用户在快速浏览时也应注意的信息。&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-tip&#34;&gt;
+        &lt;div class=&#34;alert-header&#34;&gt;
+            &lt;span class=&#34;alert-icon&#34;&gt;💡&lt;/span&gt;
+            &lt;span class=&#34;alert-title&#34;&gt;提示&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;alert-body&#34;&gt;
+            &lt;p&gt;可选信息，帮助用户更顺利地完成任务。&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-important&#34;&gt;
+        &lt;div class=&#34;alert-header&#34;&gt;
+            &lt;span class=&#34;alert-icon&#34;&gt;📌&lt;/span&gt;
+            &lt;span class=&#34;alert-title&#34;&gt;重要&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;alert-body&#34;&gt;
+            &lt;p&gt;用户成功所必需的关键信息。&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-warning&#34;&gt;
+        &lt;div class=&#34;alert-header&#34;&gt;
+            &lt;span class=&#34;alert-icon&#34;&gt;⚠️&lt;/span&gt;
+            &lt;span class=&#34;alert-title&#34;&gt;警告&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;alert-body&#34;&gt;
+            &lt;p&gt;由于潜在风险而需要用户立即关注的关键内容。&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-caution&#34;&gt;
+        &lt;div class=&#34;alert-header&#34;&gt;
+            &lt;span class=&#34;alert-icon&#34;&gt;🚨&lt;/span&gt;
+            &lt;span class=&#34;alert-title&#34;&gt;注意&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;alert-body&#34;&gt;
+            &lt;p&gt;某个操作可能带来的负面后果。&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/blockquote&gt;
+&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+        &lt;div class=&#34;alert-header&#34;&gt;
+            &lt;span class=&#34;alert-icon&#34;&gt;📝&lt;/span&gt;
+            &lt;span class=&#34;alert-title&#34;&gt;自定义标题&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;alert-body&#34;&gt;
+            &lt;p&gt;如果你想使用自定义标题，可以在方括号后面添加标题文本，如上所示。
+findstr /s /n /i &amp;ldquo;error&amp;rdquo; *.*&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/blockquote&gt;
+&lt;h2 id=&#34;脚注&#34;&gt;脚注
+&lt;/h2&gt;&lt;p&gt;脚注&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;是文档中用于添加补充说明或引用来源的一种机制。&lt;/p&gt;
+&lt;h3 id=&#34;脚注的特点&#34;&gt;脚注的特点
+&lt;/h3&gt;&lt;p&gt;脚注具有以下特点&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自动编号&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;支持双向跳转&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;语法简单直观&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;使用场景&#34;&gt;使用场景
+&lt;/h3&gt;&lt;p&gt;脚注适用于以下场景&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;技术博客&lt;/li&gt;
+&lt;li&gt;学术笔记&lt;/li&gt;
+&lt;li&gt;参考文献管理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;链接&#34;&gt;链接
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://gswhy.github.io/p/first-post/&#34; &gt;简单记录下&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;相册功能&#34;&gt;相册功能
+&lt;/h2&gt;&lt;p&gt;要创建一个相册，只需要将多张图片放在同一行（或同一个段落）中。&lt;/p&gt;
+&lt;h3 id=&#34;语法&#34;&gt;语法
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;图片 1&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;image1.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;图片 2&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;image2.jpg&lt;/span&gt;) 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;图片 3&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;image3.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;图片 4&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;image4.jpg&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;图片之间应该有两个空格，以确保它们在 Markdown 中保持在同一行。&lt;/p&gt;
+&lt;h2 id=&#34;参考文献示例-脚注&#34;&gt;参考文献示例 (脚注)
+&lt;/h2&gt;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;脚注是出现在页面底部的注释，用于对正文内容进行补充说明或标注引用来源。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;本示例来源于 Markdown 脚注功能测试文档。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;脚注的编号是自动生成的，无需手动维护序号。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;点击正文中的脚注标记可以跳转到对应的脚注内容，点击脚注后的返回箭头可以跳回原文位置。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;脚注语法仅需 &lt;code&gt;[^key]&lt;/code&gt; 和 &lt;code&gt;[^key]: 内容&lt;/code&gt; 两种格式。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;技术博客中常用脚注来标注参考文献或技术细节。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;学术笔记中脚注可以用来添加补充说明或引用来源。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
